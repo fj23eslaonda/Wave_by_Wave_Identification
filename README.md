@@ -28,7 +28,20 @@ Data were collected during a field experiment at the U.S. Army Corp of Engineers
   <img src="Duck images/D252-H12-M00.jpg" alt="" width="300" /> 
 </p>
 <p align="center">
-    <em>Duck Beach, NC, USA.</em>
+    <em>Figure 1: Duck Beach, NC, USA.</em>
+</p>
+
+Las imágenes utilizadas para este trabajo tienen la siguiente forma.
+<p align="center">
+  <img src="Dataset/Training Set/image/0.png"  width="300" />
+  <img src="Dataset/Training Set/label/0.png" width="300" /> 
+</p>
+<p align="center">
+    <em>Figure 2: Imagen and label to training respectively.</em>
+</p>
+
+<p>
+    <em> Table 1: Training and Test Set links.</em>
 </p>
 
 | Dataset                          | Link                                                                                                                     |
@@ -65,13 +78,29 @@ U-Net_Duck
     ├─── best_model_final.h5
     ├─── U-Net Architecture
 ```    
+
+Finalmente, basta con que se habra el notebook desde Google Colab [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/15XsxwXVboi4Zse3yAF6hZqJ6v3AOQiRl?usp=sharing)
+
 ## 4. Validation 
 
-Dado el gran número de hiperparámetros que se deben ajustar al implementar una red neuronal convolucional, se tuvo que reducir el espacio dado la capacidad de cómputo seleccionado los siguientes hiperparámetros.
+Dado el gran número de hiperparámetros que se deben ajustar al implementar una red neuronal convolucional, se tuvo que reducir el espacio dado la capacidad de cómputo seleccionado los siguientes hiperparámetros. La combinación ganadora se puede ver en letra negrita.
 
+<p>
+    <em> Table 2: Space of hyper-parameters tested.  Values in bold represent the best combination.</em>
+</p>
+
+| Hyper-parameters   | Values                  |
+|:------------------:|:-----------------------:|
 | Batch Size         | **2**, 4, 8, 16         |
+| Dropout            | 0.5, **0.8**            |
+| Learning Rate      | **10^-2**, 10^-3, 10^-4 |
+| Number of Filters  | 4, 8, 16, **32**        |
 
+The validation procedure described above yield 96 vectors of hyper-parameter combinations, along with their corresponding BCE loss and accuracy (associated with the $F_1$ score). These were ranked in decreasing order by their $F_1$ accuracy and increasing order by their BCE loss. In Table 2 the results of the 10 highest ranked hyper-parameter combinations are shown. Considering that it was unlikely that both BCE loss and $F_1$ accuracy could be optimal for the same combination, they were ranked independently. Thus, a total of 15 combinations populate this ranking, five of which ranked high on both scores (combinations 3, 11, 15, 27 y 31, indicated in bold)
 
+<p>
+    <em> Table 3: Ranking of best performing combinations.  Denoted in bold are the five sets thatranked high on both scores </em>
+</p>
 
 |Ranking|F1-Score |Comb. Number |Loss      |Comb. Number|
 |:-----:|:-------:|:-----------:|:--------:|:----------:|
@@ -86,7 +115,10 @@ Dado el gran número de hiperparámetros que se deben ajustar al implementar una
 |    9  |  0,798  |     34      |  0,00905 |     10     |
 |    10 |  0,794  |     25      |  0,00908 |     25     |
 
-  
+<p>
+    <em> Table 4: Network hyper-parameters and metrics for the five best-ranked networks. </em>
+</p>
+
 |Comb.  | Batch Size| Epochs | Learn.     | Drop.   | N. Filter | Loss Train.  | Loss Val. | F1 Train. | F1 Val.    |
 |:-----:|:---------:|:------:|:----------:|:-------:|:---------:|:------------:|:---------:|:---------:|:----------:|
 | **3** |   **2**   | **50** | **0.010**  | **0.8** |   **32**  |  **0,001**   | **0,007** | **0,957** | **0,895**  |
@@ -101,14 +133,14 @@ Dado el gran número de hiperparámetros que se deben ajustar al implementar una
 </p>
 
 <p align="center">
-    <em>Duck Beach, NC, USA.</em>
+    Figure 3: Sample snapshots of the optical image,  and their corresponding results. Frame A is Frame 348 of the Sep 9, 11:00 dataset. Middle panels show the masks obtained by the sensor fusion method and the U-Net model,respectively.   Right  panels  overlay  these  masks  over  the  snapshot,  for  reference.   Redcontours are the boundaries of the masks.
 </p>
 
 <p align="center">
-  <img src="Fig/learning_curve-1.png" alt="Learning Curve" width="700" />
+  <img src="Fig/learning_curve-1.png"  width="700" />
 </p>
 <p align="center">
-    <em>Duck Beach, NC, USA.</em>
+    <em>Figure 4: Evolution of the a) BCE loss  and b)F1-score .  Performance of Comb.  3 during training (thick blue line) and validation (thick orange line).  Thin graylines correspond to the other four combinations during training (full lines) and validation(dashed lines).</em>
 </p>
 
 Video
@@ -116,19 +148,38 @@ Video
 ## 6. Mask Analysis
 
 <p align="center">
-  <img src="Fig/histogram.png" alt="Duck Beach, NC, USA." width="700" />
+  <img src="Fig/histogram.png"  width="700" />
 </p>
 <p align="center">
-    <em>Duck Beach, NC, USA.</em>
+    <em>Figure 5:Statistics of wave breaking detection for all images in data sets. a) Reference snapshot;  Maps of percentage of b) True Pixels; c) Fail Pixels; d)False Pixels; e) Evolution of the distribution of True (green), Fail (dark orange) and False (light orange) Pixels among different wave and lighting conditions.A.</em>
 </p>
 
 ## 7. Prediction on Las Cruces
+Para utilizar el modelo en la predicción de otras imágenes que sea de interés, es necesario realizar un preprocesamiento de estás, dejándolas en imágenes de 512x512 pixeles con una profundidad de 8 bits en escala de grises. Luego, se deben subir las imágenes a la misma carpeta definida anteriormente en la sección 3. Training y generar una nueva carpeta  con las nuevas imágenes. 
+
+```
+U-Net_Duck
+    ├─── trainset_duck
+    ├─── testset_duck
+    ├─── model_final.json
+    ├─── best_model_final.h5
+    ├─── U-Net Architecture
+    ├─── testset_new
+         ├─── images
+              ├─── 0.png
+              ├─── ...
+              ├─── N.png
+```    
+Realizando este procedimiento en la playa de Las Cruces en Valparaíso, Chile, si necesidad de reentrenar el modelo, se pudieron obtener los siguientes resultados.
+
 <p align="center">
-  <img src="Fig/cruces_waves.png" alt="Duck Beach, NC, USA." width="800" />
+  <img src="Fig/cruces_waves.png" " width="800" />
 </p>
 <p align="center">
-    <em>Duck Beach, NC, USA.</em>
+    <em>Figure 6: Sample snapshots of the application of the U-Net model to imagery captured from a drone, near Las Cruces, Chile.</em>
 </p>
+
+
 <!-- CONTACT -->
 
 ## 8. Contact
