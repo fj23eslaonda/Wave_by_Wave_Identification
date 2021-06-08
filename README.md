@@ -145,12 +145,12 @@ The validation procedure described above yield 96 vectors of hyper-parameter com
 </p>
 
 **Video A**
+<div align="center"><img src="Fig/duck_video_1.gif"  width="700" ></div>
 
-![](Fig/duck_video_1.gif)
 
 **Video B**
 
-![](Fig/duck_video_2.gif)
+<div align="center"><img src="Fig/duck_video_2.gif"  width="700" ></div>
 
 
 ## 6. Mask Analysis
