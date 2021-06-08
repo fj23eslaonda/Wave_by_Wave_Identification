@@ -77,6 +77,7 @@ U-Net_Duck
     ├─── model_final.json
     ├─── best_model_final.h5
     ├─── U-Net Architecture
+    ├─── Dataset_matrix
 ```    
 
 Finalmente, basta con que se habra el notebook desde Google Colab [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/15XsxwXVboi4Zse3yAF6hZqJ6v3AOQiRl?usp=sharing)
