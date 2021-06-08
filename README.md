@@ -40,8 +40,38 @@ Data were collected during a field experiment at the U.S. Army Corp of Engineers
 
 
 ## 3. Training
-
+Para poder entrenar U-Net y poder replicar los experimentos presentados en este trabajo es necesario descargar las imagenes de training y test set. Luego, debe cargar estas imágenes en una carpeta en Drive. Para esto es necesario que las carpetas tengan el siguiente orden para así utilizar el mismo notebook que se presenta en este repositorio, en caso contrario, se deberá ajustar los nombres de las carpetas según cada caso. Además, se debe cambiar el entorno de ejecución de Google Colab a GPU.
+```
+U-Net_Duck
+    ├─── trainset_duck
+          ├─── images
+               ├─── 0.png
+               ├─── ...
+               ├─── 699.png
+          ├─── label
+               ├─── 0.png
+               ├─── ...
+               ├─── 699.png
+    ├─── testset_duck
+          ├─── images
+               ├─── 0.png
+               ├─── ...
+               ├─── 399.png
+          ├─── label
+               ├─── 0.png
+               ├─── ...
+               ├─── 399.png
+    ├─── model_final.json
+    ├─── best_model_final.h5
+    ├─── U-Net Architecture
+```    
 ## 4. Validation 
+
+Dado el gran número de hiperparámetros que se deben ajustar al implementar una red neuronal convolucional, se tuvo que reducir el espacio dado la capacidad de cómputo seleccionado los siguientes hiperparámetros.
+
+| Batch Size         | **2**, 4, 8, 16         |
+
+
 
 |Ranking|F1-Score |Comb. Number |Loss      |Comb. Number|
 |:-----:|:-------:|:-----------:|:--------:|:----------:|
