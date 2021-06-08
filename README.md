@@ -144,7 +144,14 @@ The validation procedure described above yield 96 vectors of hyper-parameter com
     <em>Figure 4: Evolution of the a) BCE loss  and b)F1-score .  Performance of Comb.  3 during training (thick blue line) and validation (thick orange line).  Thin graylines correspond to the other four combinations during training (full lines) and validation(dashed lines).</em>
 </p>
 
-Video
+**Video A**
+
+![](Fig/duck_video_1.gif)
+
+**Video B**
+
+![](Fig/duck_video_2.gif)
+
 
 ## 6. Mask Analysis
 
