@@ -31,7 +31,7 @@ Data were collected during a field experiment at the U.S. Army Corp of184Enginee
 
 <p align="center">
   <a >
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+    <img src="Duck images/D252-H10-M00.png" alt="Duck Beach, NC, USA." width="80" height="80">
   </a>
 </p>
 
