@@ -25,10 +25,6 @@ A machine learning algorithm based on **the convolutional neural network U-Net**
 
 <!-- ABOUT THE PROJECT -->
 ## Introduction
-<p align="center">
-  <img src="Fig/architecture.png" alt="Duck Beach, NC, USA." width="1000" />
-</p>
-
 
 
 ## Data
@@ -36,7 +32,7 @@ Data were collected during a field experiment at the U.S. Army Corp of Engineers
 
 <p align="center">
   <img src="Duck images/D252-H10-M00.jpg" alt="Duck Beach, NC, USA." width="300" />
-  <img src="Duck images/D252-H12-M00.jpg" alt="Duck Beach, NC, USA." width="300" /> 
+  <img src="Duck images/D252-H12-M00.jpg" alt="" width="300" /> 
 </p>
 
 
