@@ -2,32 +2,25 @@
 A machine learning algorithm based on **the convolutional neural network U-Net** has been trained and validated using as ground truth information a large data set of binary masks obtained from an **automated and independent detection algorithm**.
 
 <!-- TABLE OF CONTENTS -->
-<details open="open">
-  <summary>Table of Contents</summary>
-  <ol>
-    <li>
-      <a href="#introduction">Introduction</a>
-    </li>
-    <li>
-      <a href="#data">Data and Methods</a>
-    </li>
-    <li><a href="#Training">Training</a></li>
-    <li><a href="#Validation">Validation</a></li>
-    <li><a href="#Results">Results</a></li>
-    <li><a href="#Mask">Mask Analysis</a></li>
-    <li><a href="#Predicting">Prediction on Las Cruces, Valparaíso, Chile.</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgements">Acknowledgements</a></li>
-  </ol>
-</details>
+
+[Wave-by-wave Nearshore Wave Breaking Identificationusing U-Net](https://github.com/fj23eslaonda/Wave_by_Wave_Identification)
+- [1. Introduction](#1-introduction)
+- [2. Data](#2-data)
+- [3. Training](#3-training)
+- [4. Validation](#4-validation)
+- [5. Results](#5-results)
+- [6. Mask Analysis](#6-mask-analysis)
+- [7. Prediction on Las Cruces](#7-prediction-on-las-cruces)
+- [8. Contact](#8-contact)
+- [9. Acknowledgements](#9-acknowledgements)
 
 
 
 <!-- ABOUT THE PROJECT -->
-## Introduction
+## 1. Introduction
 
 
-## Data
+## 2. Data
 Data were collected during a field experiment at the U.S. Army Corp of Engineers Field Research Facility (FRF), Duck, NC. 
 
 <p align="center">
@@ -46,9 +39,9 @@ Data were collected during a field experiment at the U.S. Army Corp of Engineers
 | **Test masks (400 frames)**      | [![](https://github.com/caiostringari/deepwaves/blob/master/badges/google_drive_badge.svg)](https://drive.google.com/drive/folders/1HblJpX-V64x5OUzBPa9A6_09cZBBVTDb?usp=sharing) | 
 
 
-## Training
+## 3. Training
 
-## Validation 
+## 4. Validation 
 
 |Ranking|F1-Score |Comb. Number |Loss      |Comb. Number|
 |:-----:|:-------:|:-----------:|:--------:|:----------:|
@@ -72,7 +65,7 @@ Data were collected during a field experiment at the U.S. Army Corp of Engineers
 |  27   |     4     |   50   |   0.010    | 0.8     |     32    |    0,004     |   0,010   |   0,918   |   0,863    |
 |  31   |     4     |   50   |   0.010    | 0.5     |     32    |    0,007     |   0,009   |   0,807   |   0,780    |
 
-## Results
+## 5. Results
 <p align="center">
   <img src="Fig/FrameA.jpg" alt="Results Frame A" width="700" />
 </p>
@@ -90,7 +83,7 @@ Data were collected during a field experiment at the U.S. Army Corp of Engineers
 
 Video
 
-## Mask Analysis
+## 6. Mask Analysis
 
 <p align="center">
   <img src="Fig/histogram.png" alt="Duck Beach, NC, USA." width="700" />
@@ -99,7 +92,7 @@ Video
     <em>Duck Beach, NC, USA.</em>
 </p>
 
-## Prediction on Las Cruces, Valparaíso, Chile.
+## 7. Prediction on Las Cruces
 <p align="center">
   <img src="Fig/cruces_waves.png" alt="Duck Beach, NC, USA." width="800" />
 </p>
@@ -108,7 +101,7 @@ Video
 </p>
 <!-- CONTACT -->
 
-## Contact
+## 8. Contact
 
 Francisco Sáez - [@LinkedIn](https://www.linkedin.com/in/franciscosaezr/) - francisco.saez@sansano.usm.cl
 
@@ -117,7 +110,7 @@ Project Link: [https://github.com/fj23eslaonda/Wave_by_Wave_Identification](http
 
 
 <!-- ACKNOWLEDGEMENTS -->
-## Acknowledgements
+## 9. Acknowledgements
 * [National Laboratory for High Performance Computing (NLHPC)](https://www.nlhpc.cl/)
 * [Centro de Investigación para la Gestión Integrada del Riesgo de Desastres (CIGIDEN)](https://www.cigiden.cl/)
 * [Centro Científico Tecnológico de Valparaíso (CCTVAL)](http://www.cctval.cl/index.php/es/)
