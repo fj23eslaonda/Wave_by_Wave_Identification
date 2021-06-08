@@ -27,21 +27,36 @@ A machine learning algorithm based on **the convolutional neural network U-Net**
 ## Introduction
  Texto
 ## Data
-Data were collected during a field experiment at the U.S. Army Corp of184Engineers Field Research Facility (FRF), Duck, NC. 
+Data were collected during a field experiment at the U.S. Army Corp of Engineers Field Research Facility (FRF), Duck, NC. 
 
 <p align="center">
-  <a >
-    <img src="Duck images/D252-H10-M00.jpg" alt="Duck Beach, NC, USA." width="300" height="300">
-  </a>
+  <img src="Duck images/D252-H10-M00.jpg" alt="Duck Beach, NC, USA." width="300" />
+  <img src="Duck images/D252-H12-M00.jpg" alt="Duck Beach, NC, USA." width="300" /> 
 </p>
+
+
+| Model                     | Link                                                                                                                     |
+| ------------------------- | ------------------------------------------------------------------------------------------------------------------------ |
+| **Train. images (700 frames)**           | [![](badges/google_drive_badge.svg)](https://drive.google.com/drive/folders/1HblJpX-V64x5OUzBPa9A6_09cZBBVTDb?usp=sharing) | 
+| **Train. masks (700 frames)**           | [![](badges/google_drive_badge.svg)](https://drive.google.com/drive/folders/152kT2FAoK257EOAQPUArJC-dBeqxRhaQ?usp=sharing) | 
+| **Test images (400 frames)**           | [![](badges/google_drive_badge.svg)](https://drive.google.com/drive/folders/1g1GDRPz5IrdpN4PwCK5IfZ-ZYKCHUzpu?usp=sharing) | 
+| **Test masks (400 frames)**           | [![](badges/google_drive_badge.svg)](https://drive.google.com/drive/folders/1HblJpX-V64x5OUzBPa9A6_09cZBBVTDb?usp=sharing) | 
+
 
 ## Training
 
 ## Validation 
 
 ## Results
+<p align="center">
+  <img src="Fig/FrameA.jpg" alt="Results Frame A" width="700" />
+</p>
+<p align="center">
+  <img src="Fig/learning_curve-1.png" alt="Learning Curve" width="700" />
+</p>
 
 ## Mask Analysis
+
 
 ## Prediction on Las Cruces, Valparaíso, Chile.
 
