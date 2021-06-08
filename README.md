@@ -159,7 +159,7 @@ The validation procedure described above yield 96 vectors of hyper-parameter com
   <img src="Fig/histogram.png"  width="700" />
 </p>
 <p align="center">
-    <em>Figure 5:Statistics of wave breaking detection for all images in data sets. a) Reference snapshot;  Maps of percentage of b) True Pixels; c) Fail Pixels; d)False Pixels; e) Evolution of the distribution of True (green), Fail (dark orange) and False (light orange) Pixels among different wave and lighting conditions.A.</em>
+    <em>Figure 5:Statistics of wave breaking detection for all images in data sets. a) Reference snapshot;  Maps of percentage of b) True Pixels; c) Fail Pixels; d)False Pixels; e) Evolution of the distribution of True (green), Fail (dark orange) and False (light orange) Pixels among different wave and lighting conditions.</em>
 </p>
 
 ## 7. Prediction on Las Cruces
