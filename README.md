@@ -87,7 +87,7 @@ Video
 ## Mask Analysis
 
 <p align="center">
-  <img src="Fig/histogram.png" alt="Duck Beach, NC, USA." width="1000" />
+  <img src="Fig/histogram.png" alt="Duck Beach, NC, USA." width="700" />
 </p>
 
 ## Prediction on Las Cruces, Valparaíso, Chile.
