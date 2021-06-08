@@ -1,37 +1,14 @@
 # Wave-by-wave Nearshore Wave Breaking Identificationusing U-Net
+<br />
 # Francisco Sáez, Patricio Catalán, Carlos Valle
 A machine learning algorithm based on the convolutional neural network U-Net has been trained and validated using as ground truth information a large data set of binary masks obtained from an automated and independent detection algorithm.
-
-<br />
-<p align="center">
-  <a href="https://github.com/othneildrew/Best-README-Template">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
-  </a>
-
-  <h3 align="center">Best-README-Template</h3>
-
-  <p align="center">
-    An awesome README template to jumpstart your projects!
-    <br />
-    <a href="https://github.com/othneildrew/Best-README-Template"><strong>Explore the docs »</strong></a>
-    <br />
-    <br />
-    <a href="https://github.com/othneildrew/Best-README-Template">View Demo</a>
-    ·
-    <a href="https://github.com/othneildrew/Best-README-Template/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/othneildrew/Best-README-Template/issues">Request Feature</a>
-  </p>
-</p>
-
-
 
 <!-- TABLE OF CONTENTS -->
 <details open="open">
   <summary>Table of Contents</summary>
   <ol>
     <li>
-      <a href="#about-the-project">About The Project</a>
+      <a href="#about-the-project">Introduction</a>
       <ul>
         <li><a href="#built-with">Built With</a></li>
       </ul>
