@@ -34,7 +34,9 @@ Data were collected during a field experiment at the U.S. Army Corp of Engineers
   <img src="Duck images/D252-H10-M00.jpg" alt="Duck Beach, NC, USA." width="300" />
   <img src="Duck images/D252-H12-M00.jpg" alt="" width="300" /> 
 </p>
-
+<p align="center">
+    <em>Duck Beach, NC, USA.</em>
+</p>
 
 | Dataset                          | Link                                                                                                                     |
 | -------------------------------- | ------------------------------------------------------------------------------------------------------------------------ |
@@ -74,8 +76,16 @@ Data were collected during a field experiment at the U.S. Army Corp of Engineers
 <p align="center">
   <img src="Fig/FrameA.jpg" alt="Results Frame A" width="700" />
 </p>
+
+<p align="center">
+    <em>Duck Beach, NC, USA.</em>
+</p>
+
 <p align="center">
   <img src="Fig/learning_curve-1.png" alt="Learning Curve" width="700" />
+</p>
+<p align="center">
+    <em>Duck Beach, NC, USA.</em>
 </p>
 
 Video
@@ -85,10 +95,16 @@ Video
 <p align="center">
   <img src="Fig/histogram.png" alt="Duck Beach, NC, USA." width="700" />
 </p>
+<p align="center">
+    <em>Duck Beach, NC, USA.</em>
+</p>
 
 ## Prediction on Las Cruces, Valparaíso, Chile.
 <p align="center">
   <img src="Fig/cruces_waves.png" alt="Duck Beach, NC, USA." width="800" />
+</p>
+<p align="center">
+    <em>Duck Beach, NC, USA.</em>
 </p>
 <!-- CONTACT -->
 ## Contact
