@@ -55,8 +55,8 @@ Data used in training the network are available at
 
 
 ## 3. Training
+To the training of U-Net model and replicate the experiments presented in this work is necessary download the training and test images. Then, you must load this images on a fold on Drive. For this, you must create the following folders in you Drive's fold and thus, you can use the same notebook that we presented in this work. **However, this process is not necessary if you know to use Google Colab, but change the Hardware accelerator from None to GPU is very important**.
 
-Para poder entrenar U-Net y poder replicar los experimentos presentados en este trabajo es necesario descargar las imagenes de training y test set. Luego, debe cargar estas imágenes en una carpeta en Drive. Para esto es necesario que las carpetas tengan el siguiente orden para así utilizar el mismo notebook que se presenta en este repositorio, en caso contrario, se deberá ajustar los nombres de las carpetas según cada caso. Además, se debe cambiar el entorno de ejecución de Google Colab a GPU.
 ```
 U-Net_Duck
     ├─── trainset_duck
@@ -83,14 +83,16 @@ U-Net_Duck
     ├─── Dataset_matrix
 ```    
 
-Finalmente, basta con abrir el notebook desde Google Colab [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/15XsxwXVboi4Zse3yAF6hZqJ6v3AOQiRl?usp=sharing)
+Finally, **you can open the notebook on Google Colab directly**.
+
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/15XsxwXVboi4Zse3yAF6hZqJ6v3AOQiRl?usp=sharing)
 
 ## 4. Validation 
 
-Dado el gran número de hiperparámetros que se deben ajustar al implementar una red neuronal convolucional, se tuvo que reducir el espacio dado la capacidad de cómputo seleccionado los siguientes hiperparámetros. La combinación ganadora se puede ver en letra negrita.
+The summary of the hyper-parameters tested is shown in Table 1, and **the optimal set is shown in bold**. Assessment of the network thus considered 96 hyper-parameter combinations, that were run with 10 different seeds, **yielding 960 total runs**.
 
 <p>
-    <em> Table 2: Space of hyper-parameters tested.  Values in bold represent the best combination.</em>
+    <em> Table 1: Space of hyper-parameters tested.  Values in bold represent the best combination.</em>
 </p>
 
 | Hyper-parameters   | Values                  |
@@ -100,10 +102,10 @@ Dado el gran número de hiperparámetros que se deben ajustar al implementar una
 | Learning Rate      | **10^-2**, 10^-3, 10^-4 |
 | Number of Filters  | 4, 8, 16, **32**        |
 
-The validation procedure described above yield 96 vectors of hyper-parameter combinations, along with their corresponding BCE loss and accuracy (associated with the F1-Score). These were ranked in decreasing order by their F1 accuracy and increasing order by their BCE loss. In Table 2 the results of the 10 highest ranked hyper-parameter combinations are shown. Considering that it was unlikely that both BCE loss and F2 accuracy could be optimal for the same combination, they were ranked independently. Thus, a total of 15 combinations populate this ranking, five of which ranked high on both scores (combinations 3, 11, 15, 27 y 31, indicated in bold)
+The validation procedure described above yield 96 vectors of hyper-parameter combinations, along with their corresponding BCE loss and accuracy (associated with the F1-Score). These were ranked in decreasing order by their F1 accuracy and increasing order by their BCE loss. In Table 2 the results of the 10 highest ranked hyper-parameter combinations are shown. Considering that it was unlikely that both BCE loss and F2 accuracy could be optimal for the same combination, they were ranked independently. Thus, a total of 15 combinations populate this ranking, **five of which ranked high on both scores (combinations 3, 11, 15, 27 y 31, indicated in bold)**.
 
 <p>
-    <em> Table 3: Ranking of best performing combinations.  Denoted in bold are the five sets thatranked high on both scores </em>
+    <em> Table 2: Ranking of best performing combinations.  Denoted in bold are the five sets thatranked high on both scores </em>
 </p>
 
 |Ranking|F1-Score |Comb. Number |Loss      |Comb. Number|
@@ -119,8 +121,10 @@ The validation procedure described above yield 96 vectors of hyper-parameter com
 |    9  |  0,798  |     34      |  0,00905 |     10     |
 |    10 |  0,794  |     25      |  0,00908 |     25     |
 
+These five candidates of hyper-parameters were trained again, and the resulting networks were applied to the test set, that comprises images never seen by the network. As before, BCE loss and F1 accuracy were used as target performance metrics. **The results are shown in Table 3, ranked in terms of performance. Comb. 3 yields the best performance for the training and validation sets, and it is thus the hyper-parameter combination of choice. Henceforth, it is referred as the U-Net model.**
+
 <p>
-    <em> Table 4: Network hyper-parameters and metrics for the five best-ranked networks. </em>
+    <em> Table 3: Network hyper-parameters and metrics for the five best-ranked networks. </em>
 </p>
 
 |Comb.  | Batch Size| Epochs | Learn.     | Drop.   | N. Filter | Loss Train.  | Loss Val. | F1 Train. | F1 Val.    |
@@ -132,12 +136,16 @@ The validation procedure described above yield 96 vectors of hyper-parameter com
 |  31   |     4     |   50   |   0.010    | 0.5     |     32    |    0,007     |   0,009   |   0,807   |   0,780    |
 
 ## 5. Results
-<p align="center">
-  <img src="Fig/FrameA.jpg" alt="Results Frame A" width="700" />
-</p>
+One of the main challenges for implementing machine learning techniques, **is to have a good baseline of comparison to train and validate the network**. This is especially challenging for the case of the classification of breaking waves, as it has been fairly difficult to find a reasonable algorithm that would allow consistent identification. For the present implementation, **it has been assumed that the sensor fusion method of Catalán et al. (2011) is robust enough to systematically provide accurate breaking masks without supervision**. This has allowed the use of more than 5000 individual images to assess the overall performance. **However, these  data, assumed to be ground-truth, may also have some occasional errors, that explain in part the apparent low rate of detection of the network, averaging 71% detection of True Pixels**. In Frame A, it can be seen that **the ground truth mask encompasses two breakers that are in close succession near the center of the image**, with high production of remnant foam that is very bright. In consequence, **the sensor fusion algorithm fails to distinguish among them**, and connects them as a single event. In contrast, **the U-Net model result is better defined and resembles in a better way the plan view section of the two breakers**, that are treated as isolated events. Such occurrences on which the ground-truth data overestimates the region of breaking, led to a reduced percentage of detected true pixels, and help explain the low percentage obtained. The similar efect is present in Frame B, where Catalán's methodology indetify breaking waves but with a lot of noise and the U-Net prediction can delete this noise and it identify the breaking wave clearly
 
 <p align="center">
-    Figure 4: Sample snapshots of the optical image,  and their corresponding results. Frame A is Frame 348 of the Sep 9, 11:00 dataset. Middle panels show the masks obtained by the sensor fusion method and the U-Net model,respectively.   Right  panels  overlay  these  masks  over  the  snapshot,  for  reference.   Redcontours are the boundaries of the masks.
+  <img src="Fig/FrameA.jpg" width="700" />
+</p>
+<p align="center">
+  <img src="Fig/FrameB.jpg"  width="700" />
+</p>
+<p align="center">
+    Figure 4: Sample snapshots of the optical image,  and their corresponding results. Frame A is Frame 348 of the Sep 9, 11:00 dataset. Frame B is Frame 437 of the Sep 9, 13:00 dataset. Middle panels show the masks obtained by the sensor fusion method and the U-Net model,respectively.   Right  panels  overlay  these  masks  over  the  snapshot,  for  reference.   Redcontours are the boundaries of the masks.
 </p>
 
 <p align="center">
@@ -156,7 +164,8 @@ The validation procedure described above yield 96 vectors of hyper-parameter com
 <div align="center"><img src="Fig/duck_video_2.gif"  width="700" ></div>
 
 ## 6. Prediction on Las Cruces
-Para utilizar el modelo en la predicción de otras imágenes que sea de interés, es necesario realizar un preprocesamiento de estás, dejándolas en imágenes de 512x512 pixeles con una profundidad de 8 bits en escala de grises. Luego, se deben subir las imágenes a la misma carpeta definida anteriormente en la sección 3. Training y generar una nueva carpeta  con las nuevas imágenes. 
+To use the U-net model to masks prediction of other images, it is necessary to do a pre-processing over this images. **The new images must be of 512x512 pixels and 8-bit grayscale**. Then, images should be uploaded to the same folder defined in section 3 above. The U-Net model should be loaded and you can to do the prediction on your images.
+
 
 ```
 U-Net_Duck
@@ -171,7 +180,8 @@ U-Net_Duck
               ├─── ...
               ├─── N.png
 ```    
-Realizando este procedimiento en la playa de Las Cruces en Valparaíso, Chile, si necesidad de reentrenar el modelo, se pudieron obtener los siguientes resultados.
+
+**The U-Net model was tested using  completely new images obtained from a DJI Mavic Pro drone, near Las Cruces, Chile**. This beach is characterized by an energetic wave climate. Sample snapshots are shown in Fig 7, where it can be seen that despite the intense productivity of remnant foam by these strong breakers, **the network does a very reasonable job in detecting rollers across the image**. As before, the main deficiency is near the shoreline. It could be possible that improved camera positioning could improve results near the shoreline. **It is relevant to note that no tuning of the parameters was performed, as the U-Net model was applied directly to these new data. This in contrast with the tuning of thresholds required by the sensor fusion methodology, or threshold-based methodologies in general.**
 
 <p align="center">
   <img src="Fig/cruces_waves.png" " width="800" />
