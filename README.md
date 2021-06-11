@@ -17,7 +17,7 @@ A machine learning algorithm based on **the convolutional neural network U-Net**
 
 <!-- ABOUT THE PROJECT -->
 ## 1. Abstract
-Although easily discernible by the naked eye, a robust and consistent methodology to identify the spatio-temporal occurrence of wave breaking in the nearshore on a wave-by-wave basis has been elusive to date. In this work, a Convolutional Neural Network (U-Net) is trained and its performance evaluated using a large number of images in the electro-optical range, and its performance is compared against an existing sensor-fusion methodology. The results show a good performance of the resulting U-Net model, matching nearly 71% of the breaking instances detected by the sensor-fusion approach. Although this value can be seen as low, qualitative comparisons show that in many cases, wave breaking identification is improved by the U-Net model. Moreover, a sample application to a different surfzone showed good qualitative performance, suggesting its applicability to other wave conditions, with short processing times. This offers the possibility of implementing automated wave breaking detection that could enhance our understanding of nearshore processes. Hence, the U-Net model is made available to the community for future testing and continuous development.
+Although easily discernible by the naked eye, **a robust and consistent methodology to identify the spatio-temporal occurrence of wave breaking in the nearshore on a wave-by-wave basis has been elusive to date**. In this work, **a Convolutional Neural Network (U-Net) is trained and its performance evaluated using a large number of images in the electro-optical range**, and its performance is compared against an existing sensor-fusion methodology. The results show a good performance of the resulting U-Net model, matching nearly 71% of the breaking instances detected by the sensor-fusion approach. Although this value can be seen as low, **qualitative comparisons show that in many cases, wave breaking identification is improved by the U-Net model**. Moreover, a sample application to a different surfzone showed good qualitative performance, suggesting its applicability to other wave conditions, with short processing times. **This offers the possibility of implementing automated wave breaking detection that could enhance our understanding of nearshore processes**. Hence, **the U-Net model is made available to the community for future testing and continuous development**.
 
 **Main Idea:** 
 <p align="center">
@@ -47,19 +47,15 @@ The video images and mask used in this work are presented below.
     <em>Figure 3: Imagen and label to training respectively.</em>
 </p>
 
-<p>
-    <em> Table 1: Training and Test Set links.</em>
-</p>
+**Dataset**
 
-| Dataset                          | Link                                                                                                                     |
-| -------------------------------- | ------------------------------------------------------------------------------------------------------------------------ |
-| **Train. images (700 frames)**   | [![](https://github.com/caiostringari/deepwaves/blob/master/badges/google_drive_badge.svg)](https://drive.google.com/drive/folders/1HblJpX-V64x5OUzBPa9A6_09cZBBVTDb?usp=sharing) | 
-| **Train. masks (700 frames)**    | [![](https://github.com/caiostringari/deepwaves/blob/master/badges/google_drive_badge.svg)](https://drive.google.com/drive/folders/152kT2FAoK257EOAQPUArJC-dBeqxRhaQ?usp=sharing) | 
-| **Test images (400 frames)**     | [![](https://github.com/caiostringari/deepwaves/blob/master/badges/google_drive_badge.svg)](https://drive.google.com/drive/folders/1g1GDRPz5IrdpN4PwCK5IfZ-ZYKCHUzpu?usp=sharing) | 
-| **Test masks (400 frames)**      | [![](https://github.com/caiostringari/deepwaves/blob/master/badges/google_drive_badge.svg)](https://drive.google.com/drive/folders/1HblJpX-V64x5OUzBPa9A6_09cZBBVTDb?usp=sharing) | 
+Data used in training the network are available at
+
+[![](http://www.icons101.com/icons/48/Flatwoken_by_Alessandro_Roncone/128/mendeley.png)](https://data.mendeley.com/datasets/jprw8tg2hh/draft?a=1cf01733-85b4-4132-9515-07db2e8caf62)
 
 
 ## 3. Training
+
 Para poder entrenar U-Net y poder replicar los experimentos presentados en este trabajo es necesario descargar las imagenes de training y test set. Luego, debe cargar estas imágenes en una carpeta en Drive. Para esto es necesario que las carpetas tengan el siguiente orden para así utilizar el mismo notebook que se presenta en este repositorio, en caso contrario, se deberá ajustar los nombres de las carpetas según cada caso. Además, se debe cambiar el entorno de ejecución de Google Colab a GPU.
 ```
 U-Net_Duck
