@@ -3,7 +3,7 @@ A machine learning algorithm based on **the convolutional neural network U-Net**
 
 <!-- TABLE OF CONTENTS -->
 
-[Wave-by-wave Nearshore Wave Breaking Identificationusing U-Net](https://github.com/fj23eslaonda/Wave_by_Wave_Identification)
+[Wave-by-wave Nearshore Wave Breaking Identification using U-Net](https://github.com/fj23eslaonda/Wave_by_Wave_Identification)
 - [1. Abstract](#1-abstract)
 - [2. Data](#2-data)
 - [3. Training](#3-training)
